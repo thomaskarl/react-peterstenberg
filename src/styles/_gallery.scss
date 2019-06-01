@@ -1,0 +1,57 @@
+/*
+ * Photos
+*/
+
+.gallery {
+	position: relative;
+	z-index: 1;
+	padding: $space * 2;
+	background: $brand-color4;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-gap: $space * 2;
+
+	.photo {
+		cursor: pointer;
+		transition: transform 1s;
+
+		&:hover {
+			.photo-info-container {
+				padding: $space * 2;
+				font-size: $space;
+				top: $space;
+				left: $space;
+				right: $space;
+				bottom: $space;
+				background-color: rgba(0, 0, 0, 0.71);
+
+				.photo-info-content {
+					margin-bottom: $space;
+					display: flex;
+					align-items: center;
+				}
+
+				.photo-info-icon {
+					width: $space;
+					margin-right: $space;
+				}
+			}
+		}
+
+		img {
+			width: 100%;
+		}
+
+		position: relative;
+
+		.photo-info-container {
+			position: absolute;
+			top: $space;
+			left: $space;
+
+			.photo-info-icon {
+				width: 10px;
+			}
+		}
+	}
+}

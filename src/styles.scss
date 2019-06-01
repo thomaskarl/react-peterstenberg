@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import "styles/reset.scss";
+@import "styles/mixins.scss";
+@import "styles/variables.scss";
+@import "styles/logo.scss";
+@import "styles/navigation.scss";
+@import "styles/slideshow.scss";
+@import "styles/gallery.scss";
+@import "styles/elements.scss";
+@import "styles/footer.scss";
+@import "styles/about.scss";
+@import "styles/contact.scss";
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	font-size: 11px;
+	text-transform: uppercase;
+	background-color: $dark;
+	color: $light;
+}
+
+h1, h2, h3, h4, h6, h6, p, a {
+	color: $light;
+	text-decoration: none;
+}
+
+#root {
+	margin: 0 auto;
+}
+
+#particles-js {
+	height: 100%;
+	position: fixed;
+	z-index: 2;
+}

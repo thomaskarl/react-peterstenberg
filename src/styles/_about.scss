@@ -1,0 +1,32 @@
+/*
+ * About
+*/
+
+.about {
+	@include center-flex;
+	position: relative;
+	height: 100vh;
+	background-color: $brand-color1;
+
+	.about-container {
+		max-width: 640px;
+		margin: 0 auto;
+		text-align: center;
+
+		p {
+			line-height: 30px;
+			text-transform: none;
+		}
+
+		.about-text {
+			margin-top: 61px;
+		}
+
+		.social-media-container {
+			.social-media-icon {
+				max-width: 82px;
+				margin: 61px 50px;
+			}
+		}
+	}
+}

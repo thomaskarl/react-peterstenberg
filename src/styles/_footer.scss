@@ -1,0 +1,19 @@
+/*
+ * Footer
+*/
+
+footer {
+	@include center-flex;
+	position: relative;
+	height: 50px;
+	background-color: $light;
+
+	p {
+		font-size: 11px;
+		color: $brand-color1;
+
+		a {
+			color: $brand-color1;
+		}
+	}
+}

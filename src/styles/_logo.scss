@@ -1,0 +1,28 @@
+/*
+ * Logo
+*/
+
+.logo img {
+	max-width: 300px;
+}
+
+.logo-small img {
+	max-width: $space * 2;
+	margin: $space $space $space ($space * 2);
+}
+
+.slideshow-container .logo {
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		position: relative;
+	}
+}
+

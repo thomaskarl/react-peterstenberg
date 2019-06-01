@@ -1,0 +1,32 @@
+/*
+ * Shadows
+*/
+@mixin shadow {
+	box-shadow: 0 0 1px $light;
+}
+
+@mixin drop-shadow {
+	box-shadow: 0 0 6px 4px rgb(136, 136, 136);
+}
+
+
+
+/*
+ * Center flex
+*/
+@mixin center-flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+
+
+/*
+ * Card border
+*/
+@mixin border {
+	border: 2px solid black;
+	border-radius: 10px;
+}

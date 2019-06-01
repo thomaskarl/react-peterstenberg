@@ -1,0 +1,48 @@
+/*
+ * Slideshow
+*/
+
+.slideshow-container {
+	position: relative;
+	z-index: 1;
+	background-color: $dark;
+
+	.react-slideshow-container {
+		width: 100%;
+		height: 100vh;
+		margin: auto;
+
+		div.nav {
+			background: unset;
+
+			span {
+				border-width: 2px;
+				border-color: rgba(255, 255, 255, 0.6);
+			}
+
+			&:hover {
+				background: unset;
+
+				span {
+					border-color: rgba(255, 255, 255, 1);
+				}
+			}
+
+			&:first-of-type span {
+				margin-left: 15px;
+			}
+
+			&:last-of-type span {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	div.indicators {
+		position: absolute;
+		bottom: 20px;
+		z-index: 2;
+		right: 0;
+		left: 0;
+	}
+}

@@ -1,0 +1,103 @@
+/*
+ * Contact
+*/
+
+.contact {
+	height: 100vh;
+}
+
+button,
+.button,
+a.button,
+.submit {
+	appearance: none;
+	border-radius: 0;
+	border: 0;
+	background-color: $light;
+	margin: 0;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: inline-block;
+	color: $brand-color4;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: $font-main;
+	font-size: 11px;
+	font-weight: 700;
+
+	&:focus,
+	&:hover {
+		background: darken($brand-color3, 10%);
+	}
+}
+
+input[type=text],
+input[type=url],
+input[type=email],
+input[type=tel],
+input[type=number],
+input[type=password] {
+	appearance: none;
+	border-radius: 0;
+	padding: 10px;
+	padding-left: 1px;
+	width: 200px;
+	height: 20px;
+	font-size: 11px;
+	text-transform: uppercase;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid $light;
+	background-color: transparent;
+	font-family: $font-main;
+
+	&::placeholder {
+		color: $light;
+		text-transform: uppercase;
+	}
+
+	&:focus {
+		border-bottom: 2px solid $light;
+	}
+}
+
+#parallax-container {
+	background: #D9F6FE;
+	display: block;
+	height: 100vh;
+	position: relative;
+
+	div {
+		background-position: bottom center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		height: 100vh;
+	}
+}
+
+.background1 {
+	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/para-background.png");
+}
+
+.background2 {
+	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/front01.png");
+}
+
+.background3 {
+	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/front02.png");
+}
+
+.background4 {
+	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/front03.png");
+}
+
+.background5 {
+	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/front04.png");
+}
+
+
+
