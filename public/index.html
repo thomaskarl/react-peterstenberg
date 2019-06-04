@@ -5,26 +5,196 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.gif" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>Peter Stenberg - Freelance Photographer</title>
+
+
+    <style type="text/css">
+
+
+      .ipl-progress-indicator.available {
+        opacity: 0;
+      }
+      .ipl-progress-indicator {
+        background-image: linear-gradient(#D9F6FE, #73C7E6);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        opacity: 1;
+        pointer-events: none;
+        -webkit-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+        -moz-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+        transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+        z-index: 9999;
+      }
+      .insp-logo-frame {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        -webkit-animation: fadein 436ms;
+        -moz-animation: fadein 436ms;
+        animation: fadein 436ms;
+        height: 98%;
+      }
+      .insp-logo-frame-img{
+        width: 146px;
+        height: 112px;
+        -webkit-align-self: center;
+        -moz-align-self: center;
+        align-self: center;
+      }
+      .ipl-progress-indicator-head {
+        background-color: #c6dafc;
+        height: 4px;
+        overflow: hidden;
+        position: relative;
+      }
+      .ipl-progress-indicator .first-indicator, .ipl-progress-indicator .second-indicator {
+        background-color: #056D8B;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        position: absolute;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        transform-origin: left center;
+        -webkit-transform: scaleX(0);
+        -moz-transform: scaleX(0);
+        transform: scaleX(0);
+      }
+      .ipl-progress-indicator .first-indicator {
+        -webkit-animation: first-indicator 2000ms linear infinite;
+        -moz-animation: first-indicator 2000ms linear infinite;
+        animation: first-indicator 2000ms linear infinite;
+      }
+      .ipl-progress-indicator .second-indicator {
+        -webkit-animation: second-indicator 2000ms linear infinite;
+        -moz-animation: second-indicator 2000ms linear infinite;
+        animation: second-indicator 2000ms linear infinite;
+      }
+      .ipl-progress-indicator .insp-logo {
+        animation: App-logo-spin infinite 20s linear;
+        -webkit-align-self: center;
+        -moz-align-self: center;
+        align-self: center;
+      }
+      @keyframes App-logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @-moz-keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes first-indicator {
+        0% {
+          transform: translate(0%) scaleX(0);
+        }
+        25% {
+          transform: translate(0%) scaleX(0.5);
+        }
+        50% {
+          transform: translate(25%) scaleX(0.75);
+        }
+        75% {
+          transform: translate(100%) scaleX(0);
+        }
+        100% {
+          transform: translate(100%) scaleX(0);
+        }
+      }
+      @keyframes second-indicator {
+        0% {
+          transform: translate(0%) scaleX(0);
+        }
+        60% {
+          transform: translate(0%) scaleX(0);
+        }
+        80% {
+          transform: translate(0%) scaleX(0.6);
+        }
+        100% {
+          transform: translate(100%) scaleX(0.1);
+        }
+      }
+    </style>
+
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!--<div style="height: 500px; background-color: peru; color: #000;">-->
+      <!--<form method="POST" action="http://peterstenberg.local/wp-json/contact-form-7/v1/contact-forms/107/feedback">-->
+        <!--<input type="email" name="email" placeholder="Your email">-->
+        <!--<textarea name="message" placeholder="Test Message"></textarea>-->
+        <!--<button type="submit">Send Test</button>-->
+      <!--</form>-->
+    <!--</div>-->
+
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!--https://github.com/nguyenbathanh/react-loading-screen-->
+    <div class="ipl-progress-indicator" id="ipl-progress-indicator">
+      <div class="ipl-progress-indicator-head">
+        <div class="first-indicator"></div>
+        <div class="second-indicator"></div>
+      </div>
+      <div class="insp-logo-frame">
+
+
+
+        <svg class="insp-logo-frame-img" width="112px" viewBox="0 0 150 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Artboard" transform="translate(-513.000000, -6.000000)" stroke="#ffffff" stroke-width="5">
+              <g id="Group-2" transform="translate(424.000000, 9.000000)">
+                <g id="Group" transform="translate(91.000000, 0.000000)">
+                  <circle id="Oval" cx="72.5" cy="43.5" r="43.5"></circle>
+                  <path d="M0.5,87 L145.5,87" id="Line" stroke-linecap="square"></path>
+                  <path d="M0.5,83 L0.5,51.775899" id="Line" stroke-linecap="square"></path>
+                  <path d="M145.5,83 L145.5,51.775899" id="Line" stroke-linecap="square"></path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+
+
+
+      </div>
+    </div>
+
+
     <!--<div id="particles-js"></div>-->
     <div id="root"></div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script>

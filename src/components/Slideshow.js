@@ -18,7 +18,7 @@ export default class Slideshow extends React.Component {
 			return (
 				<Zoom {...zoomOutProperties}>
 					{
-						this.props.images.map((image, index) => <div key={index} style={{
+						this.props.images.map((image, index) => <div className={'slide-images'} key={index} style={{
 							width: '100%',
 							height: '100vh',
 							backgroundImage: 'url("' + image.url + '")',
@@ -31,7 +31,7 @@ export default class Slideshow extends React.Component {
 				</Zoom>
 			)
 		} else {
-			return null // TODO sfsd sfs
+			return null
 		}
 	}
 }

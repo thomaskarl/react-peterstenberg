@@ -11,6 +11,10 @@ import Footer from "./components/Footer";
 
 
 class App extends React.Component {
+	authenticate(){
+		return new Promise(resolve => setTimeout(resolve, 2000))
+	}
+
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -24,7 +28,20 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		let backgroundSlider = 'http://peterstenberg.local/wp-json/acf/v3/options/options';
+
+		this.authenticate().then(() => {
+			const ele = document.getElementById('ipl-progress-indicator')
+			if(ele){
+				// fade out
+				ele.classList.add('available')
+				setTimeout(() => {
+					// remove from DOM
+					ele.outerHTML = ''
+				}, 2000)
+			}
+		});
+
+		let backgroundSlider = 'https://backend.peterstenberg.no/wp-json/acf/v3/options/options';
 		fetch(backgroundSlider)
 			.then(response => response.json())
 			.then(response => {
@@ -58,14 +75,14 @@ class App extends React.Component {
 		return (
 			<div id={'home'} className={'page-container'}>
 				<Navigation logoSmall={this.state.logoSmall}/>
-				<div className={'slideshow-container'}>
+				<div className={'slideshow-container slideshow-first'}>
 					<Slideshow images={this.state.slideshowFirst}/>
 					<Logo logo={this.state.logo}/>
 				</div>
 				<Gallery
 					icons={this.state.icons}
 				/>
-				<div className={'slideshow-container'}>
+				<div className={'slideshow-container slideshow-second'}>
 					<Slideshow images={this.state.slideshowSecond}/>
 				</div>
 				<Contact/>

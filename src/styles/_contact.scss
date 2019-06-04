@@ -4,20 +4,67 @@
 
 .contact {
 	height: 100vh;
+	position: relative;
+
+	.contact-form-container {
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.contact-form {
+			max-width: 500px;
+			width: 100%;
+
+			form {
+				margin: $space;
+			}
+		}
+
+		.input-container {
+			display: flex;
+			flex-direction: column;
+
+			label {
+				margin-top: 20px;
+				margin-bottom: 15px;
+				margin-left: 5px;
+			}
+
+			textarea {
+				background: transparent;
+				border: 2px solid white;
+				min-height: 150px;
+				color: $light;
+				font-size: 15px;
+
+				&:focus {
+					outline: none;
+					border: 2px solid $light;
+				}
+			}
+		}
+
+		.info-field {
+			margin: $space 5px ($space * 2) 0;
+		}
+	}
 }
 
-button,
-.button,
-a.button,
 .submit {
 	appearance: none;
 	border-radius: 0;
 	border: 0;
 	background-color: $light;
-	margin: 0;
-	padding: 10px 30px;
+	margin: 0 auto;
+	padding: 10px 50px;
 	cursor: pointer;
-	display: inline-block;
+	display: block;
 	color: $brand-color4;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -28,6 +75,7 @@ a.button,
 	&:focus,
 	&:hover {
 		background: darken($brand-color3, 10%);
+		color: $light;
 	}
 }
 
@@ -38,65 +86,72 @@ input[type=tel],
 input[type=number],
 input[type=password] {
 	appearance: none;
+	font-weight: 700;
 	border-radius: 0;
+	margin-bottom: $space;
 	padding: 10px;
-	padding-left: 1px;
-	width: 200px;
-	height: 20px;
+	padding-left: 5px;
+	height: $space;
 	font-size: 11px;
 	text-transform: uppercase;
 	border-top: none;
 	border-left: none;
 	border-right: none;
-	border-bottom: 1px solid $light;
+	border-bottom: 2px solid $light;
 	background-color: transparent;
 	font-family: $font-main;
+	color: $light;
 
 	&::placeholder {
+		margin-left: 5px;
 		color: $light;
 		text-transform: uppercase;
 	}
 
 	&:focus {
-		border-bottom: 2px solid $light;
+		outline: none;
+		border: 2px solid $light;
 	}
 }
 
 #parallax-container {
-	background: #D9F6FE;
+	background: $brand-color3;
 	display: block;
 	height: 100vh;
 	position: relative;
 
 	div {
 		background-position: bottom center;
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 		width: 100%;
 		position: fixed;
 		bottom: 0;
 		height: 100vh;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
 	}
 }
 
 .background1 {
-	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/para-background.png");
+	background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/backgroudn.svg');
 }
 
 .background2 {
-	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/front01.png");
+	background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/front01.svg');
 }
 
 .background3 {
-	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/front02.png");
+	background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/front02.svg');
 }
 
 .background4 {
-	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/front03.png");
+	background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/front03.svg');
 }
 
 .background5 {
-	background: url("http://peterstenberg.local/wp-content/uploads/2019/05/front04.png");
+	background: url('http://backend.peterstenberg.no/wp-content/uploads/2019/06/front04.svg');
 }
 
 

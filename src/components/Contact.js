@@ -1,4 +1,6 @@
 import React from 'react';
+import ContactFrom from './ContactForm';
+import Fishes from "./Fishes";
 
 window.addEventListener('scroll', function (ev) {
 
@@ -6,7 +8,7 @@ window.addEventListener('scroll', function (ev) {
 	var distanceToTop = someDiv.getBoundingClientRect().top;
 
 
-	if (distanceToTop <= 500) {
+	if (distanceToTop <= 1000) {
 		window.addEventListener('scroll', () => {
 			let parent = document.getElementById('parallax-container');
 			let children = parent.getElementsByTagName('div');
@@ -21,6 +23,10 @@ export default class Contact extends React.Component {
 	render() {
 		return (
 			<div id={'contact'} className='contact'>
+
+				<ContactFrom/>
+
+				<Fishes/>
 
 				<div id="parallax-container">
 					<div className={'background1'}></div>
