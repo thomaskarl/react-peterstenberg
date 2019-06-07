@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 
 class App extends React.Component {
-	authenticate(){
+	authenticate() {
 		return new Promise(resolve => setTimeout(resolve, 2000))
 	}
 
@@ -20,8 +20,7 @@ class App extends React.Component {
 		this.state = {
 			logo: {},
 			logoSmall: {},
-			slideshowFirst: [],
-			slideshowSecond: [],
+			slideshow: [],
 			icons: {},
 			contactInfo: {}
 		}
@@ -31,7 +30,7 @@ class App extends React.Component {
 
 		this.authenticate().then(() => {
 			const ele = document.getElementById('ipl-progress-indicator')
-			if(ele){
+			if (ele) {
 				// fade out
 				ele.classList.add('available')
 				setTimeout(() => {
@@ -48,8 +47,7 @@ class App extends React.Component {
 				this.setState({
 					logo: response.acf.logo,
 					logoSmall: response.acf.logo_small,
-					slideshowFirst: response.acf.slideshow_first,
-					slideshowSecond: response.acf.slideshow_second,
+					slideshow: response.acf.slideshow_first,
 					icons: {
 						cameraIcon: response.acf.icon_camera.url,
 						anchorIcon: response.acf.icon_anchor.url,
@@ -76,15 +74,12 @@ class App extends React.Component {
 			<div id={'home'} className={'page-container'}>
 				<Navigation logoSmall={this.state.logoSmall}/>
 				<div className={'slideshow-container slideshow-first'}>
-					<Slideshow images={this.state.slideshowFirst}/>
+					<Slideshow images={this.state.slideshow}/>
 					<Logo logo={this.state.logo}/>
 				</div>
 				<Gallery
 					icons={this.state.icons}
 				/>
-				<div className={'slideshow-container slideshow-second'}>
-					<Slideshow images={this.state.slideshowSecond}/>
-				</div>
 				<Contact/>
 				<About
 					logo={this.state.logo}

@@ -3,6 +3,7 @@
 */
 
 .about {
+	z-index: 11;
 	@include center-flex;
 	position: relative;
 	height: 100vh;

@@ -3,11 +3,12 @@
 */
 
 .contact {
+	overflow: hidden;
 	height: 100vh;
 	position: relative;
 
 	.contact-form-container {
-		z-index: 1;
+		z-index: 11;
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -139,18 +140,22 @@ input[type=password] {
 }
 
 .background2 {
+	z-index: 4;
 	background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/front01.svg');
 }
 
 .background3 {
+	z-index: 3;
 	background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/front02.svg');
 }
 
 .background4 {
+	z-index: 2;
 	background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/front03.svg');
 }
 
 .background5 {
+	z-index: 1;
 	background: url('http://backend.peterstenberg.no/wp-content/uploads/2019/06/front04.svg');
 }
 

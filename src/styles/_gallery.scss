@@ -4,15 +4,17 @@
 
 .gallery {
 	position: relative;
-	z-index: 1;
-	padding: $space * 2;
-	background-image: linear-gradient(#D9F6FE, #D9F6FE, #73C7E6);
+	z-index: 9;
+	padding: $space;
+	//background-image: linear-gradient(#D9F6FE, #D9F6FE, #73C7E6);
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-	grid-gap: $space * 2;
+	grid-gap: $space;
 
 	.photo {
+		z-index: 11;
 		cursor: pointer;
+		position: relative;
 		transition: transform 1s;
 
 		&:hover {

@@ -3,8 +3,8 @@
 */
 
 .slideshow-container {
+	z-index: 9;
 	position: relative;
-	z-index: 1;
 	background-color: $dark;
 
 	.react-slideshow-container {
@@ -44,11 +44,5 @@
 		z-index: 2;
 		right: 0;
 		left: 0;
-	}
-}
-
-.slideshow-second {
-	.slide-images {
-		background-attachment: scroll !important;
 	}
 }

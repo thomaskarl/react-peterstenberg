@@ -1,0 +1,336 @@
+/*
+ * Fishes
+*/
+
+@keyframes swim-left-to-right {
+	0% {
+		left: -100px;
+	}
+	100% {
+		left: 200%;
+	}
+}
+
+@keyframes swim-right-to-left {
+	0% {
+		right: -100px;
+	}
+	100% {
+		right: 150%;
+	}
+}
+
+@keyframes jojo {
+	0%, 50%, 100% {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(-5px);
+	}
+	75% {
+		transform: translateY(-3px);
+	}
+}
+
+@keyframes jojopeter {
+	0%, 50%, 100% {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(-15px);
+	}
+	75% {
+		transform: translateY(-14px);
+	}
+}
+
+.fish-container {
+	@media screen and (max-width: $mobile) {
+		display: none;
+	}
+
+	.fish {
+		position: absolute;
+		margin-left: -$space;
+	}
+
+	.right {
+		left: -400px;
+		//animation: swim-left-to-right 20s infinite linear, jojo 2s infinite;
+	}
+
+	.left {
+		right: -400px;
+		//animation: swim-right-to-left 21s infinite linear, jojo 2s infinite;
+	}
+
+	//Guppy
+	.right.guppy {
+		animation: swim-left-to-right 15s infinite linear, jojo 2s infinite;
+	}
+
+	.left.guppy {
+		animation: swim-right-to-left 16s infinite linear, jojo 2s infinite;
+	}
+
+	.front01.guppy {
+		width: (36px * 2);
+		height: (21px * 2);
+		animation-delay: random(10) + s;
+		top: random(80) + vh;
+	}
+
+	.front02.guppy {
+		width: 36px;
+		height: 21px;
+		animation-delay: random(10) + s;
+		top: random(80) + vh;
+	}
+
+	.front03.guppy {
+		width: (36px / 1.5);
+		height: (21px / 1.5);
+		animation-delay: random(10) + s;
+		top: random(80) + vh;
+	}
+
+	.front04.guppy {
+		width: (36px / 2);
+		height: (21px / 2);
+		animation-delay: random(10) + s;
+		top: random(80) + vh;
+	}
+
+
+	//Shark
+	.right.shark {
+		animation: swim-left-to-right 35s infinite linear, jojo 2s infinite;
+	}
+
+	.left.shark {
+		animation: swim-right-to-left 36s infinite linear, jojo 2s infinite;
+	}
+
+	.front01.shark {
+		width: (206px * 2);
+		height: (88px * 2);
+		animation-delay: random(10) + s;
+		top: random(100) + vh;
+	}
+
+	.front02.shark {
+		width: 206px;
+		height: 88px;
+		animation-delay: random(10) + s;
+		top: random(100) + vh;
+	}
+
+	.front03.shark {
+		width: (206px / 1.5);
+		height: (88px / 1.5);
+		animation-delay: random(10) + s;
+		top: random(100) + vh;
+	}
+
+	.front04.shark {
+		width: (206px / 2);
+		height: (88px / 2);
+		animation-delay: random(10) + s;
+		top: random(100) + vh;
+	}
+
+
+	//Tang
+	.right.tang {
+		animation: swim-left-to-right 20s infinite linear, jojo 2s infinite;
+	}
+
+	.left.tang {
+		animation: swim-right-to-left 21s infinite linear, jojo 2s infinite;
+	}
+
+	.front01.tang {
+		width: (117px * 2);
+		height: (99px * 2);
+		animation-delay: random(10) + s;
+		top: random(80) + vh;
+	}
+
+	.front02.tang {
+		width: 117px;
+		height: 99px;
+		animation-delay: random(10) + s;
+		top: random(80) + vh;
+	}
+
+	.front03.tang {
+		width: (117px / 1.5);
+		height: (99px / 1.5);
+		animation-delay: random(10) + s;
+		top: random(80) + vh;
+	}
+
+	.front04.tang {
+		width: (117px / 2);
+		height: (99px / 2);
+		animation-delay: random(10) + s;
+		top: random(80) + vh;
+	}
+
+	//Peter
+	.peter {
+		z-index: 3;
+		animation: swim-left-to-right 31s infinite linear, jojopeter 2s infinite;
+		animation-delay: random(10) + s;
+		top: random(50) + vh;
+
+		img {
+			width: 280px;
+			height: 130px;
+			filter: invert(22%) sepia(95%) saturate(2390%) hue-rotate(173deg) brightness(91%) contrast(101%);
+			//filter: invert(75%) sepia(88%) saturate(2244%) hue-rotate(168deg) brightness(95%) contrast(88%);
+			//filter: invert(19%) sepia(10%) saturate(5162%) hue-rotate(158deg) brightness(92%) contrast(91%);
+			//filter: invert(7%) sepia(13%) saturate(2608%) hue-rotate(173deg) brightness(91%) contrast(87%);
+		}
+	}
+
+	//Z-index
+	.front01 {
+		z-index: 4;
+	}
+
+	.front02 {
+		z-index: 3;
+	}
+
+	.front03 {
+		z-index: 2;
+	}
+
+	.front04 {
+		z-index: 1;
+	}
+
+	//Images
+	.tang-01-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/tang-01-right.png');
+		background-size: contain;
+	}
+
+	.tang-02-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/tang-02-right.png');
+		background-size: contain;
+	}
+
+	.tang-03-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/tang-03-right.png');
+		background-size: contain;
+	}
+
+	.tang-04-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/tang-04-right.png');
+		background-size: contain;
+	}
+
+	.tang-01-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/tang-01-left.png');
+		background-size: contain;
+	}
+
+	.tang-02-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/tang-02-left.png');
+		background-size: contain;
+	}
+
+	.tang-03-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/tang-03-left.png');
+		background-size: contain;
+	}
+
+	.tang-04-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/tang-04-left.png');
+		background-size: contain;
+	}
+
+	.shark-01-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/shark-01-right.png');
+		background-size: contain;
+	}
+
+	.shark-02-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/shark-02-right.png');
+		background-size: contain;
+	}
+
+	.shark-03-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/shark-03-right.png');
+		background-size: contain;
+	}
+
+	.shark-04-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/shark-04-right.png');
+		background-size: contain;
+	}
+
+	.shark-01-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/shark-01-left.png');
+		background-size: contain;
+	}
+
+	.shark-02-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/shark-02-left.png');
+		background-size: contain;
+	}
+
+	.shark-03-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/shark-03-left.png');
+		background-size: contain;
+	}
+
+	.shark-04-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/shark-04-left.png');
+		background-size: contain;
+	}
+
+	.guppy-01-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/guppy-01-right.png');
+		background-size: contain;
+	}
+
+	.guppy-02-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/guppy-02-right.png');
+		background-size: contain;
+	}
+
+	.guppy-03-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/guppy-03-right.png');
+		background-size: contain;
+	}
+
+	.guppy-04-right {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/guppy-04-right.png');
+		background-size: contain;
+	}
+
+	.guppy-01-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/guppy-01-left.png');
+		background-size: contain;
+	}
+
+	.guppy-02-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/guppy-02-left.png');
+		background-size: contain;
+	}
+
+	.guppy-03-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/guppy-03-left.png');
+		background-size: contain;
+	}
+
+	.guppy-04-left {
+		background: url('https://backend.peterstenberg.no/wp-content/uploads/2019/06/guppy-04-left.png');
+		background-size: contain;
+	}
+}
+
+
