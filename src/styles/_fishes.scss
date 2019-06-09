@@ -45,10 +45,6 @@
 }
 
 .fish-container {
-	@media screen and (max-width: $mobile) {
-		display: none;
-	}
-
 	.fish {
 		position: absolute;
 		margin-left: -$space;

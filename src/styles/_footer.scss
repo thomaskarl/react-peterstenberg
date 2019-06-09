@@ -4,6 +4,7 @@
 
 footer {
 	@include center-flex;
+	z-index: 11;
 	position: relative;
 	height: 50px;
 	background-color: $light;

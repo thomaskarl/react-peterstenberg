@@ -20,13 +20,13 @@
 		}
 
 		.about-text {
-			margin-top: 61px;
+			margin: 61px $space 0 $space;
 		}
 
 		.social-media-container {
 			.social-media-icon {
 				max-width: 82px;
-				margin: 61px 50px;
+				margin: 61px $space;
 			}
 		}
 	}

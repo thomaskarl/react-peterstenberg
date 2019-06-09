@@ -3,7 +3,7 @@
 */
 
 .slideshow-container {
-	z-index: 9;
+	z-index: 11;
 	position: relative;
 	background-color: $dark;
 
@@ -41,7 +41,7 @@
 	div.indicators {
 		position: absolute;
 		bottom: 20px;
-		z-index: 2;
+		z-index: 12;
 		right: 0;
 		left: 0;
 	}

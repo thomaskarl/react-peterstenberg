@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './loading.css';
 import './styles.scss';
 import Gallery from './components/Gallery';
 import Slideshow from './components/Slideshow';

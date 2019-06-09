@@ -3,13 +3,12 @@
 */
 
 .navigation {
-	//mix-blend-mode: exclusion;
 	height: 50px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 10;
+	z-index: 20;
 	background-color: rgba(255, 255, 255, 0.15);
 	display: flex;
 	justify-content: space-between;
@@ -39,6 +38,10 @@
 				&:hover::after {
 					width: 100%;
 				}
+			}
+
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}

@@ -4,11 +4,10 @@
 
 .gallery {
 	position: relative;
-	z-index: 9;
+	z-index: 11;
 	padding: $space;
-	//background-image: linear-gradient(#D9F6FE, #D9F6FE, #73C7E6);
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: $space;
 
 	.photo {
@@ -20,7 +19,7 @@
 		&:hover {
 			.photo-info-container {
 				padding: $space * 2;
-				font-size: $space;
+				font-size: 14px;
 				top: $space;
 				left: $space;
 				right: $space;
@@ -44,15 +43,15 @@
 			width: 100%;
 		}
 
-		position: relative;
-
 		.photo-info-container {
 			position: absolute;
+			font-size: 7px;
 			top: $space;
 			left: $space;
 
 			.photo-info-icon {
 				width: 10px;
+				margin-right: 5px;
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 {
   "name": "react-peterstenberg",
   "version": "0.1.0",
+  "homepage": "https://wwww.peterstenberg.no",
   "private": true,
   "dependencies": {
     "node-sass": "^4.12.0",

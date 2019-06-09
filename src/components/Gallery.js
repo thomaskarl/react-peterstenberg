@@ -9,7 +9,7 @@ export default class Gallery extends React.Component {
 	}
 
 	componentDidMount() {
-		let pagesURL = 'https://backend.peterstenberg.no/wp-json/wp/v2/photos';
+		let pagesURL = 'https://backend.peterstenberg.no/wp-json/wp/v2/photos/?per_page=100';
 		fetch(pagesURL)
 			.then(response => response.json())
 			.then(response => {
@@ -24,7 +24,7 @@ export default class Gallery extends React.Component {
 			return (
 				<div className={'photo'} key={index}>
 					<a href={photos.acf.photo.url}>
-						<img src={photos.acf.photo.sizes.medium} alt={photos.acf.photo.alt}/>
+						<img src={photos.acf.photo.sizes.thumbnail} alt={photos.acf.photo.alt}/>
 						<div className={'photo-info-container'}>
 							<div className={'photo-info-content'}>
 								<img className={'photo-info-icon'} src={this.props.icons.cameraIcon} alt="Camera icon"/>
