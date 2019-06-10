@@ -7,7 +7,6 @@ window.addEventListener('scroll', function (ev) {
 	var someDiv = document.getElementById('contact');
 	var distanceToTop = someDiv.getBoundingClientRect().top;
 
-
 	if (distanceToTop <= 1000) {
 		window.addEventListener('scroll', () => {
 			let parent = document.getElementById('parallax-container');

@@ -20,6 +20,8 @@
 
 		gtag('config', 'UA-141661457-1');
 	</script>
+	<!--Form validation script - https://github.com/cferdinandi/validate-->
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/validate@2.2.0/dist/validate.min.js"></script>
 </head>
 <body>
 
@@ -48,16 +50,9 @@
 	</div>
 </div>
 
-
-<div id="particles-js"></div>
 <div id="root"></div>
-
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
 <script>
-	particlesJS.load('particles-js', 'particles.json', function () {
-		console.log('particles.json loaded...');
-	});
+	validate.init();
 </script>
 </body>
 </html>

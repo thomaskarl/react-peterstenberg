@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './loading.css';
-import './styles.scss';
 import Gallery from './components/Gallery';
 import Slideshow from './components/Slideshow';
 import Logo from './components/Logo';
@@ -9,7 +8,12 @@ import Navigation from './components/Navigation'
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import './styles.scss';
 
+// Disable right mouse click
+document.addEventListener("contextmenu", function (e) {
+	e.preventDefault();
+});
 
 class App extends React.Component {
 	authenticate() {
@@ -28,7 +32,6 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-
 		this.authenticate().then(() => {
 			const ele = document.getElementById('ipl-progress-indicator')
 			if (ele) {

@@ -2,57 +2,103 @@
  * Photos
 */
 
-.gallery {
+.gallery-container {
+	z-index: 21;
 	position: relative;
-	z-index: 11;
-	padding: $space;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-gap: $space;
 
-	.photo {
-		z-index: 11;
-		cursor: pointer;
-		position: relative;
-		transition: transform 1s;
+	.gallery {
+		padding: $space;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+		grid-gap: $space;
 
-		&:hover {
+		.photo {
+			position: relative;
+			transition: transform 1s;
+
+			.lightbox-wrapper {
+				.img-open {
+					overflow: hidden;
+					height: 200px;
+
+					.photo-image {
+						width: 100%;
+
+						&:hover {
+							.photo-info-container {
+								padding: $space * 2;
+								font-size: 14px;
+								top: $space;
+								left: $space;
+								right: $space;
+								bottom: $space;
+								background-color: rgba(0, 0, 0, 0.71);
+
+								.photo-info-content {
+									margin-bottom: $space;
+									display: flex;
+									align-items: center;
+								}
+
+								.photo-info-icon {
+									width: $space;
+									margin-right: $space;
+								}
+							}
+						}
+					}
+				}
+
+				.lightbox {
+					background: rgba(0, 0, 0, 0.92);
+
+					.photo-image {
+						margin: 0 auto;
+					}
+
+					img {
+						max-height: 90vh;
+					}
+				}
+			}
+
 			.photo-info-container {
-				padding: $space * 2;
-				font-size: 14px;
+				position: absolute;
+				font-size: 12px;
 				top: $space;
 				left: $space;
-				right: $space;
-				bottom: $space;
-				background-color: rgba(0, 0, 0, 0.71);
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				color: $light;
 
 				.photo-info-content {
-					margin-bottom: $space;
-					display: flex;
-					align-items: center;
+					@include center-flex;
 				}
 
 				.photo-info-icon {
-					width: $space;
-					margin-right: $space;
+					width: 16px;
+					margin-right: 6px;
+					margin-bottom: 6px;
+					margin-top: 6px;
 				}
 			}
 		}
+	}
+}
 
-		img {
-			width: 100%;
-		}
+.load-more {
+	margin: $space auto;
+	display: block;
+	border: none;
+	font-family: $font-main;
+	text-transform: uppercase;
+	background: transparent;
+	color: $light;
+	cursor: pointer;
+	font-weight: 700;
 
-		.photo-info-container {
-			position: absolute;
-			font-size: 7px;
-			top: $space;
-			left: $space;
-
-			.photo-info-icon {
-				width: 10px;
-				margin-right: 5px;
-			}
-		}
+	&:focus {
+		outline: none;
 	}
 }

@@ -52,12 +52,10 @@
 
 	.right {
 		left: -400px;
-		//animation: swim-left-to-right 20s infinite linear, jojo 2s infinite;
 	}
 
 	.left {
 		right: -400px;
-		//animation: swim-right-to-left 21s infinite linear, jojo 2s infinite;
 	}
 
 	//Guppy
@@ -135,7 +133,6 @@
 		top: random(100) + vh;
 	}
 
-
 	//Tang
 	.right.tang {
 		animation: swim-left-to-right 20s infinite linear, jojo 2s infinite;
@@ -184,9 +181,6 @@
 			width: 280px;
 			height: 130px;
 			filter: invert(22%) sepia(95%) saturate(2390%) hue-rotate(173deg) brightness(91%) contrast(101%);
-			//filter: invert(75%) sepia(88%) saturate(2244%) hue-rotate(168deg) brightness(95%) contrast(88%);
-			//filter: invert(19%) sepia(10%) saturate(5162%) hue-rotate(158deg) brightness(92%) contrast(91%);
-			//filter: invert(7%) sepia(13%) saturate(2608%) hue-rotate(173deg) brightness(91%) contrast(87%);
 		}
 	}
 

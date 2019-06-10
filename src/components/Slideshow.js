@@ -13,7 +13,6 @@ const zoomOutProperties = {
 
 export default class Slideshow extends React.Component {
 	render() {
-
 		if (this.props.images.length > 0) {
 			return (
 				<Zoom {...zoomOutProperties}>
