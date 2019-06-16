@@ -48,6 +48,9 @@
 	.fish {
 		position: absolute;
 		margin-left: -$space;
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
 	}
 
 	.right {

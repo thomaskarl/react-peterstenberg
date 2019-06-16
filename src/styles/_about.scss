@@ -6,12 +6,11 @@
 	z-index: 11;
 	@include center-flex;
 	position: relative;
-	height: 100vh;
 	background-color: $brand-color1;
 
 	.about-container {
 		max-width: 640px;
-		margin: 0 auto;
+		margin: 140px auto;
 		text-align: center;
 
 		p {

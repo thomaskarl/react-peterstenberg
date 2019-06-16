@@ -5,6 +5,7 @@
 .gallery-container {
 	z-index: 21;
 	position: relative;
+	background-color: $brand-color1;
 
 	.gallery {
 		padding: $space;
@@ -95,6 +96,7 @@
 	text-transform: uppercase;
 	background: transparent;
 	color: $light;
+	padding-bottom: $space * 2;
 	cursor: pointer;
 	font-weight: 700;
 
