@@ -4,12 +4,12 @@
   "homepage": "https://wwww.peterstenberg.no",
   "private": true,
   "dependencies": {
-    "node-sass": "^4.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0",
     "react-simple-lightbox": "^1.0.26",
-    "react-slideshow-image": "^1.1.7"
+    "react-slideshow-image": "^1.3.4"
   },
   "scripts": {
     "start": "react-scripts start",
