@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './loading.css';
 import Gallery from './components/Gallery';
 import Slideshow from './components/Slideshow';
 import Logo from './components/Logo';
@@ -8,6 +7,7 @@ import Navigation from './components/Navigation'
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import './loading.css';
 import './styles.scss';
 
 // Disable right mouse click
@@ -16,10 +16,6 @@ document.addEventListener("contextmenu", function (e) {
 });
 
 class App extends React.Component {
-	authenticate() {
-		return new Promise(resolve => setTimeout(resolve, 2000))
-	}
-
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -31,19 +27,19 @@ class App extends React.Component {
 		}
 	}
 
-	componentDidMount() {
-		this.authenticate().then(() => {
-			const ele = document.getElementById('ipl-progress-indicator')
-			if (ele) {
-				// fade out
-				ele.classList.add('available')
-				setTimeout(() => {
-					// remove from DOM
-					ele.outerHTML = ''
-				}, 2000)
-			}
-		});
+	removeLoadingScreen(){
+		const ele = document.getElementById('ipl-progress-indicator')
+		if (ele) {
+			// fade out
+			ele.classList.add('available')
+			setTimeout(() => {
+				// remove from DOM
+				ele.outerHTML = ''
+			}, 500)
+		}
+	}
 
+	loadAssets(){
 		let backgroundSlider = 'https://backend.peterstenberg.no/wp-json/acf/v3/options/options';
 		fetch(backgroundSlider)
 			.then(response => response.json())
@@ -69,8 +65,13 @@ class App extends React.Component {
 						contactFlickrLogo: response.acf.contact_flickr_logo.url,
 						aboutText: response.acf.about_text
 					}
-				})
+				});
+				this.removeLoadingScreen();
 			})
+	}
+
+	componentDidMount() {
+		this.loadAssets();
 	}
 
 	render() {
