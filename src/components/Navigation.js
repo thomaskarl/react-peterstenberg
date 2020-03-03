@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Navigation = props => {
+const Navigation = (props) => {
   return (
-    <div className={"navigation"}>
+    <div className={'navigation'}>
       <div className="logo-small">
         <a href="#home">
           <img src={props.logoSmall} alt="small logo" />

@@ -1,14 +1,14 @@
-import React from "react";
-import { Zoom } from "react-slideshow-image";
+import React from 'react';
+import { Zoom } from 'react-slideshow-image';
 
-const Slideshow = props => {
+const Slideshow = (props) => {
   const zoomOutProperties = {
     duration: 5000,
     transitionDuration: 4000,
     infinite: true,
     indicators: true,
     scale: 1.2,
-    arrows: true
+    arrows: true,
   };
 
   if (props && props.images.length > 0) {
@@ -16,16 +16,16 @@ const Slideshow = props => {
       <Zoom {...zoomOutProperties}>
         {props.images.map((image, index) => (
           <div
-            className={"slide-images"}
+            className={'slide-images'}
             key={index}
             style={{
-              width: "100%",
-              height: "100vh",
+              width: '100%',
+              height: '100vh',
               backgroundImage: 'url("' + image.url + '")',
-              backgroundSize: "cover",
-              backgroundPosition: "center center",
-              backgroundRepeat: "repeat-y",
-              backgroundAttachment: "fixed"
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'repeat-y',
+              backgroundAttachment: 'fixed',
             }}
           />
         ))}

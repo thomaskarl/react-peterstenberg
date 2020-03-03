@@ -1,43 +1,42 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import Gallery from "./components/Gallery";
-import Slideshow from "./components/Slideshow";
-import Logo from "./components/Logo";
-import Navigation from "./components/Navigation";
-import Contact from "./components/Contact";
-import About from "./components/About";
-import Footer from "./components/Footer";
-import "./loading.css";
-import "./styles.scss";
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import Gallery from './components/Gallery';
+import Slideshow from './components/Slideshow';
+import Logo from './components/Logo';
+import Navigation from './components/Navigation';
+import Contact from './components/Contact';
+import About from './components/About';
+import Footer from './components/Footer';
+import './loading.css';
+import './styles.scss';
 
 const App = () => {
   const [appState, setAppState] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   // Disable right mouse click
-  document.addEventListener("contextmenu", function(e) {
+  document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
   });
 
   const removeLoadingScreen = () => {
-    const ele = document.getElementById("ipl-progress-indicator");
+    const ele = document.getElementById('ipl-progress-indicator');
     if (ele) {
       // fade out
-      ele.classList.add("available");
+      ele.classList.add('available');
       setTimeout(() => {
         // remove from DOM
-        ele.outerHTML = "";
+        ele.outerHTML = '';
       }, 500);
     }
   };
 
   useEffect(() => {
     const fetchAppAssets = async () => {
-      const appAssets =
-        "https://backend.peterstenberg.no/wp-json/acf/v3/options/options";
+      const appAssets = 'https://backend.peterstenberg.no/wp-json/acf/v3/options/options';
       await fetch(appAssets)
-        .then(response => response.json())
-        .then(response => {
+        .then((response) => response.json())
+        .then((response) => {
           setAppState({
             logo: response.acf.logo,
             logoSmall: response.acf.logo_small,
@@ -46,7 +45,7 @@ const App = () => {
               cameraIcon: response.acf.icon_camera.url,
               anchorIcon: response.acf.icon_anchor.url,
               calenderIcon: response.acf.icon_calender.url,
-              locationIcon: response.acf.icon_location.url
+              locationIcon: response.acf.icon_location.url,
             },
             contactInfo: {
               contactPhone: response.acf.contact_phone,
@@ -57,8 +56,8 @@ const App = () => {
               contactFacebookLogo: response.acf.contact_facebook_logo.url,
               contactInstagramLogo: response.acf.contact_instagram_logo.url,
               contactFlickrLogo: response.acf.contact_flickr_logo.url,
-              aboutText: response.acf.about_text
-            }
+              aboutText: response.acf.about_text,
+            },
           });
           setIsLoading(false);
           removeLoadingScreen();
@@ -70,7 +69,7 @@ const App = () => {
   return (
     <>
       {isLoading ? (
-        <div></div>
+        <div />
       ) : (
         <div id="home" className="page-container">
           <Navigation logoSmall={appState.logoSmall} />
@@ -88,4 +87,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

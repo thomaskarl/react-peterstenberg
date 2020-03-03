@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
-const About = props => {
+const About = (props) => {
   return (
     <div id="about" className="about">
       <div className="about-container">
         <div className="logo">
           <img src={props.logo} alt="logo" />
         </div>
-        <p className={"about-text"}>{props.contactInfo.aboutText}</p>
+        <p className="about-text">{props.contactInfo.aboutText}</p>
 
         <div className="social-media-container">
           <a href={props.contactInfo.contactFacebook}>
             <img
-              className={"social-media-icon"}
+              className="social-media-icon"
               src={props.contactInfo.contactFacebookLogo}
               alt="Facebook logo"
             />
@@ -20,7 +20,7 @@ const About = props => {
 
           <a href={props.contactInfo.contactInstagram}>
             <img
-              className={"social-media-icon"}
+              className="social-media-icon"
               src={props.contactInfo.contactInstagramLogo}
               alt="Instagram logo"
             />
@@ -28,7 +28,7 @@ const About = props => {
 
           <a href={props.contactInfo.contactFlickr}>
             <img
-              className={"social-media-icon"}
+              className="social-media-icon"
               src={props.contactInfo.contactFlickrLogo}
               alt="Flickr logo"
             />
@@ -36,18 +36,14 @@ const About = props => {
         </div>
 
         <p>
-          <a href={"mailto:" + props.contactInfo.contactMail}>
-            {props.contactInfo.contactMail}
-          </a>
+          <a href={`mailto:${props.contactInfo.contactMail}`}>{props.contactInfo.contactMail}</a>
         </p>
         <p>
-          <a href={"tel:" + props.contactInfo.contactPhone}>
-            {props.contactInfo.contactPhone}
-          </a>
+          <a href={`tel:${props.contactInfo.contactPhone}`}>{props.contactInfo.contactPhone}</a>
         </p>
         <a href="https://backend.peterstenberg.no/wp-admin/">
           <img
-            className={"anchor"}
+            className="anchor"
             src="https://backend.peterstenberg.no/wp-content/uploads/2019/06/anchor_white.png"
             alt="diver"
           />

@@ -1,25 +1,25 @@
-import React, { useEffect } from "react";
-import ContactForm from "./ContactForm";
-import Fishes from "./Fishes";
+import React, { useEffect } from 'react';
+import ContactForm from './ContactForm';
+import Fishes from './Fishes';
 
 const Contact = () => {
   useEffect(() => {
-    window.addEventListener("scroll", function(ev) {
-      var someDiv = document.getElementById("contact");
+    window.addEventListener('scroll', function(ev) {
+      var someDiv = document.getElementById('contact');
       var distanceToTop = someDiv.getBoundingClientRect().top;
 
       if (distanceToTop <= 1000) {
         window.addEventListener(
-          "scroll",
+          'scroll',
           () => {
-            let parent = document.getElementById("parallax-container");
-            let children = parent.getElementsByTagName("div");
+            let parent = document.getElementById('parallax-container');
+            let children = parent.getElementsByTagName('div');
             for (let i = 0; i < children.length; i++) {
               children[i].style.transform =
-                "translateY(" + (distanceToTop * i) / children.length + "px)";
+                'translateY(' + (distanceToTop * i) / children.length + 'px)';
             }
           },
-          false
+          false,
         );
       }
     });
